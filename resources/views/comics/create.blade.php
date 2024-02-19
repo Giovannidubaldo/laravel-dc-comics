@@ -18,8 +18,7 @@
                     </div>
                     <div class="form-group mb-3 col-6">
                         <label for="thumb">Immagine</label>
-                        <input type="text" name="thumb" id="thumb" placeholder="Immagine" class="form-control"
-                            required>
+                        <input type="text" name="thumb" id="thumb" placeholder="Immagine" class="form-control">
                     </div>
                     <div class="form-group mb-3 col-6">
                         <label for="price">Prezzo</label>

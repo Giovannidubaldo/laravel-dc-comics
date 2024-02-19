@@ -5,7 +5,11 @@
     <div class="jumbotron">
         <div class="blue-container">
             <div class="my-container">
-                <img src="{{ $comic['thumb'] }}" alt="" class="thumb-comic">
+                @if ($comic->thumb == null)
+                    <img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="" class="thumb-comic">
+                @else
+                    <img src="{{ $comic['thumb'] }}" alt="" class="thumb-comic">
+                @endif
             </div>
         </div>
     </div>

@@ -11,7 +11,11 @@
                 @foreach ($comics as $comic)
                     <div class="col-2 mt-4">
                         <a href="{{ route('comics.show', ['comic' => $comic['id']]) }}" class="text-decoration-none">
-                            <img src="{{ $comic['thumb'] }}" alt="" class="img-fluid">
+                            @if ($comic->thumb == null)
+                                <img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="" class="img-fluid">
+                            @else
+                                <img src="{{ $comic['thumb'] }}" alt="" class="img-fluid">
+                            @endif
                             <h6 class="text-uppercase mt-3 text-white">{{ $comic['series'] }}</h6>
                         </a>
                     </div>
