@@ -1,1 +1,179 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// UTILITY
+.color-blue {
+    color: #0C7CEC;
+}
+
+// HEADER
+header {
+    padding: 10px;
+
+    ul {
+        li {
+            text-transform: uppercase;
+            padding: 20px;
+
+            a {
+                text-decoration: none;
+                color: black;
+                padding-bottom: 50px;
+
+                &:hover,
+                &.active {
+                    color: #0C7CEC;
+                    border-bottom: 3px solid #0C7CEC;
+                }
+            }
+        }
+    }
+}
+
+// MAIN homepage
+main {
+
+    // Jumbotron
+    .jumbotron {
+        background-image: url('../images/jumbotron.jpg');
+        height: 500px;
+        position: relative;
+    }
+
+    .blue-container {
+        background-color: #0C7CEC;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+
+        .thumb-comic {
+            width: 200px;
+            position: absolute;
+            bottom: 20px;
+        }
+    }
+
+    // Contenitore tutti i fumetti
+    .comics-main {
+        background-color: rgb(52, 52, 52);
+        padding: 50px;
+
+        img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: #0C7CEC;
+            color: white;
+            border-style: none;
+            width: 200px;
+            padding: 10px;
+        }
+    }
+
+    // Pagina singolo fumetto
+    .my-container {
+        width: 1000px;
+        margin: 50px auto 0;
+
+        .banner {
+            background-color: rgb(48, 114, 48);
+            padding: 5px;
+            color: rgb(196, 196, 196);
+            border: 1px solid grey;
+        }
+    }
+
+    .bg-grey {
+        background-color: rgb(196, 195, 195);
+
+        ul {
+            li {
+                padding: 10px;
+                border-bottom: 1px solid grey;
+            }
+        }
+    }
+
+    // Contenitore azzurro con immagini e link
+    .bottom-main {
+        background-color: #0C7CEC;
+        padding: 30px 0;
+
+        li {
+            margin: 10px;
+            text-transform: uppercase;
+
+            img {
+                width: 50px;
+            }
+
+            a {
+                color: white;
+                margin: 10px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// FOOTER
+footer {
+    .top-footer {
+        background-image: url('../images/footer-bg.jpg');
+
+        .footer-logo-dc {
+            background-image: url('../images/dc-logo-bg.png');
+            background-position: right;
+            background-repeat: no-repeat;
+
+            .menu {
+                padding: 50px 0;
+
+                h3 {
+                    color: white;
+                }
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        padding: 0;
+                        color: grey;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-footer {
+        background-color: rgb(77, 77, 77);
+        padding: 30px 0;
+
+        button {
+            text-transform: uppercase;
+            padding: 10px;
+            color: white;
+            background-color: rgb(77, 77, 77);
+            border: 1px solid #0C7CEC;
+        }
+
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #0C7CEC;
+        }
+    }
+}
