@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="buttons d-flex justify-content-center mt-5">
-            <button>Load More</button>
+            <a href="{{ route('comics.create') }}" class="btn btn-sm btn-primary p-2">Aggiungi nuovo Comic</a>
         </div>
     </div>
 
