@@ -68,15 +68,15 @@
                     <ul class="list-unstyled mt-4">
                         <li class="d-flex justify-content-between">
                             <span>Series:</span>
-                            <span class="me-4">{{ $comic['series'] }}</span>
+                            <span class="color-blue">{{ $comic['series'] }}</span>
                         </li>
                         <li class="d-flex justify-content-between">
                             <span>Price:</span>
-                            <span class="me-4">{{ $comic['price'] }}</span>
+                            <span>{{ $comic['price'] }}</span>
                         </li>
                         <li class="d-flex justify-content-between">
                             <span>On sale date:</span>
-                            <span class="me-4">{{ $comic['sale_date'] }}</span>
+                            <span>{{ $comic['sale_date'] }}</span>
                         </li>
                     </ul>
                 </div>
