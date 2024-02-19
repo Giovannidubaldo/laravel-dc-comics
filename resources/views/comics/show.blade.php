@@ -84,9 +84,15 @@
                         </li>
                     </ul>
                 </div>
+                <!-- Bottone modifica fumetto -->
+                <div class="d-flex justify-content-center mb-3">
+                    <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}"
+                        class="btn btn-sm btn-danger">Modifica</a>
+                </div>
             </div>
         </div>
     </div>
+
 
     <!-- Bottom - main -->
     <div class="bottom-main">
