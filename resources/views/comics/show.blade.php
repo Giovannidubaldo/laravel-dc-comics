@@ -84,10 +84,15 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Bottone modifica fumetto -->
+                <!-- Bottone modifica ed elimina fumetto -->
                 <div class="d-flex justify-content-center mb-3">
-                    <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}"
-                        class="btn btn-sm btn-danger">Modifica</a>
+                    <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}" class="btn btn-sm btn-danger">Modifica
+                    </a>
+                    <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger ms-3">Elimina</button>
+                    </form>
                 </div>
             </div>
         </div>
