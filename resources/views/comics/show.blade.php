@@ -88,7 +88,8 @@
                 <div class="d-flex justify-content-center mb-3">
                     <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}" class="btn btn-sm btn-danger">Modifica
                     </a>
-                    <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
+                    <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST"
+                        onsubmit="return confirm('Sei sicuro di voler eliminare questo elemento?')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger ms-3">Elimina</button>

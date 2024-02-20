@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Comic;
 
 class ComicController extends Controller
@@ -36,7 +37,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $form_comic = $request->all();
+        $form_comic = $this->validation($request->all());
 
         $newComic = new Comic();
 
@@ -79,7 +80,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $form_comic = $request->all();
+        $form_comic = $this->validation($request->all());
 
         $newComic = Comic::find($id);
 
@@ -102,5 +103,41 @@ class ComicController extends Controller
         $comic->delete();
 
         return redirect()->route('comics.index');
+    }
+
+    private function validation($data)
+    {
+        $validator = Validator::make(
+            $data,
+            [
+                'title' => 'required|min:5|max:255',
+                'description' => 'required',
+                'price' => 'required|max:30',
+                'series' => 'required|min:5|max:100',
+                'sale_date' => 'required',
+                'type' => 'required|max:50',
+                'artists' => 'required',
+                'writers' => 'required'
+            ],
+            [
+                'title.required' => 'Il titolo è obbligatorio',
+                'title.min' => 'Il titolo deve contenere almeno 5 caratteri',
+                'title.max' => 'Il titolo deve contenere massimo 255 caratteri',
+                'description.required' => 'La descrizione è obbligatoria',
+                'price.required' => 'Il prezzo è obbligatorio',
+                'price.max' => 'Il prezzo deve contenere massimo 30 caratteri',
+                'series.required' => 'La serie è obbligatoria',
+                'series.min' => 'La serie deve contenere almeno 5 caratteri',
+                'series.max' => 'La serie deve contenere massimo 100 caratteri',
+                'sale_date.required' => 'La data è obbligatoria',
+                'type.required' => 'Il tipo è obbligatorio',
+                'type.max' => 'Il tipo deve contenere massimo 50 caratteri',
+                'artists.required' => 'Gli artisti sono obbligatori',
+                'writers.required' => 'Gli scrittori sono obbligatori'
+
+            ]
+        )->validate();
+
+        return $validator;
     }
 }

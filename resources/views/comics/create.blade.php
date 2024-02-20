@@ -7,10 +7,18 @@
     <h2 class="text-center mt-5">Aggiungi un nuovo comic</h2>
     <div class="container my-5">
         <div class="row">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('comics.store') }}" method="post">
                 @csrf
                 <div class="row">
-
                     <div class="form-group mb-3 col-6">
                         <label for="title">Titolo</label>
                         <input type="text" name="title" id="title" placeholder="Titolo del comic"
